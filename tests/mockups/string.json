@@ -1,0 +1,26 @@
+{
+  "name": "String Test",
+  "description": "This is a simple OPTIONS mockup with string attr.",
+  "renders": [
+    "application/json",
+    "text/html"
+  ],
+  "parses": [
+    "application/json",
+    "application/x-www-form-urlencoded",
+    "multipart/form-data"
+  ],
+  "actions": {
+    "POST": {
+      "name": {
+        "type": "string",
+        "required": true,
+        "read_only": false,
+        "label": "Name",
+        "help_text": "Repository display name",
+        "max_length": 64,
+        "style": {}
+      }
+    }
+  }
+}
