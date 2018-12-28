@@ -1,0 +1,29 @@
+{
+  "name": "vue-mc-drf-model",
+  "version": "0.1.0",
+  "description": "Fill Vue MC Model from Django Rest Framework API",
+  "main": "src/index.js",
+  "repository": "https://github.com/Ilhasoft/vue-mc-drf-model",
+  "author": "Victor Meneghini <vhmeneghini@gmail.com>, Douglas Paz <eu@douglaspaz.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "mocha --require @babel/register **/*.spec.js"
+  },
+  "dependencies": {
+    "vue-mc": "^0.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
+  }
+}
