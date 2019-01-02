@@ -55,10 +55,6 @@ describe('AttrValidationParse', () => {
       expect(validation('im a bot')).not.to.be.true;
     });
 
-    it('valid value: integer', () => {
-      expect(validation(4)).to.be.true;
-    });
-
     it('invalid value: float', () => {
       expect(validation(3.44)).not.to.be.true;
     });
