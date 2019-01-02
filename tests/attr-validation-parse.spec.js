@@ -2,13 +2,15 @@
 import { expect } from 'chai';
 import {
   string,
+  integer,
 } from 'vue-mc/validation';
 import AttrValidationParse from '../src/attr-validation-parse';
 
 
 describe('AttrValidationParse', () => {
   let validation;
-  describe('test string', () => {
+
+  describe('Test string', () => {
     beforeEach(() => {
       validation = AttrValidationParse({ type: 'string' });
     });
@@ -18,7 +20,7 @@ describe('AttrValidationParse', () => {
     });
   });
 
-  describe('test string and required', () => {
+  describe('Test string and required', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
         type: 'string',
@@ -39,7 +41,39 @@ describe('AttrValidationParse', () => {
     });
   });
 
-  describe('test integer and required', () => {
+  describe('Test string min and max validation', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'string',
+        length: {
+          min: 0,
+          max: 10,
+        },
+      });
+    });
+
+    it('valid value: value between 0 and 10 ', () => {
+      expect(validation('i like')).to.be.true;
+    });
+
+    it('invalid value: value is not between to 0 and 10 ', () => {
+      expect(validation('i like eat pizza')).not.to.be.true;
+    });
+  });
+
+  describe('Test integer', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'number',
+      });
+    });
+
+    it('is a intenger validation', () => {
+      expect(validation).to.be.equal(integer);
+    });
+  });
+
+  describe('Test integer and required', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
         type: 'number',
@@ -61,6 +95,59 @@ describe('AttrValidationParse', () => {
 
     it('invalid value: blank', () => {
       expect(validation()).not.to.be.true;
+    });
+  });
+
+  describe('Test integer min validation', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'number',
+        min: 10,
+      });
+    });
+
+    it('invalid value: less than the minimum value ', () => {
+      expect(validation(5)).not.to.be.true;
+    });
+
+    it('valid value: more than the minimum value', () => {
+      expect(validation(50)).to.be.true;
+    });
+
+    it('valid value: equal than the minimum value', () => {
+      expect(validation(10)).to.be.true;
+    });
+  });
+
+  describe('Test boolean', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'boolean',
+      });
+    });
+
+    it('valid boolean value: true', () => {
+      expect(validation(true)).to.be.true;
+    });
+
+    it('valid boolean value: false', () => {
+      expect(validation(true)).to.be.true;
+    });
+  });
+
+  describe('Test Email', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'email',
+      });
+    });
+
+    it('valid email format', () => {
+      expect(validation('user@bothub.it')).to.be.true;
+    });
+
+    it('invalid email format', () => {
+      expect(validation('user@bothub')).not.to.be.true;
     });
   });
 
