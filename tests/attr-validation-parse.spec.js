@@ -133,6 +133,10 @@ describe('AttrValidationParse', () => {
     it('valid boolean value: false', () => {
       expect(validation(true)).to.be.true;
     });
+
+    it('invalid boolean value: string instead boolean', () => {
+      expect(typeof validation('im not boolean')).not.to.be.equal('boolean');
+    });
   });
 
   describe('Test Email', () => {
