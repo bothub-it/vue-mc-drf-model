@@ -41,6 +41,22 @@ describe('AttrValidationParse', () => {
     });
   });
 
+  describe('Test error if length is null', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'string',
+        length: {
+          min: null,
+          max: null,
+        },
+      });
+    });
+
+    it('Set string to return error', () => {
+      expect(validation('i like eat sushi')).to.throw;
+    });
+  });
+
   describe('Test string min and max validation', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
