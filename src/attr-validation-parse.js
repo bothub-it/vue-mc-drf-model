@@ -1,6 +1,7 @@
 import {
   string,
   required,
+  integer,
 } from 'vue-mc/validation';
 
 
@@ -11,6 +12,11 @@ export default (description) => {
     case 'string':
       validation = string;
       break;
+
+    case 'number':
+      validation = integer;
+      break;
+
     default:
       throw new Error(`${description.type} is a invalid type.`);
   }

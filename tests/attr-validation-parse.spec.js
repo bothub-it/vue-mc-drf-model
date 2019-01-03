@@ -39,6 +39,31 @@ describe('AttrValidationParse', () => {
     });
   });
 
+  describe('test integer and required', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'number',
+        required: true,
+      });
+    });
+
+    it('valid value', () => {
+      expect(validation(3)).to.be.true;
+    });
+
+    it('invalid value: string', () => {
+      expect(validation('im a bot')).not.to.be.true;
+    });
+
+    it('invalid value: float', () => {
+      expect(validation(3.44)).not.to.be.true;
+    });
+
+    it('invalid value: blank', () => {
+      expect(validation()).not.to.be.true;
+    });
+  });
+
   it('invalid type', () => {
     expect(() => {
       AttrValidationParse({ type: 'victor' });
