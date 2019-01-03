@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "lint": "eslint **/*.js",
-    "test": "mocha --require @babel/register **/*.spec.js"
+    "test": "nyc mocha --require @babel/register **/*.spec.js --timeout=3000"
   },
   "dependencies": {
     "vue-mc": "^0.5.0"
@@ -24,6 +24,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-import": "^2.14.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
