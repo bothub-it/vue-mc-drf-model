@@ -9,7 +9,8 @@
   "private": false,
   "scripts": {
     "lint": "eslint **/*.js",
-    "test": "mocha --require @babel/register **/*.spec.js"
+    "test": "nyc mocha --require @babel/register **/*.spec.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "vue-mc": "^0.5.0"
@@ -20,10 +21,12 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-import": "^2.14.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
