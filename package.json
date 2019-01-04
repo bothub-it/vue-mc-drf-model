@@ -9,9 +9,11 @@
   "private": false,
   "scripts": {
     "lint": "eslint **/*.js",
-    "test": "nyc mocha --require @babel/register **/*.spec.js --timeout=3000"
+    "test": "nyc mocha --require @babel/register **/*.spec.js --timeout=3000",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
+    "coveralls": "^3.0.2",
     "vue-mc": "^0.5.0"
   },
   "devDependencies": {
