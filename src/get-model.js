@@ -15,5 +15,7 @@ export default (attrsDescription, Model = VueMcModel) => {
       return modelDefinition.mutations;
     }
   }
+  console.log('olé');
+  console.log(DRFModel);
   return DRFModel;
 };

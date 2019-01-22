@@ -10,7 +10,7 @@ class PeopleSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'email',
-            'country',
-            'birthday',
-            'gender',
+            # 'country',
+            # 'birthday',
+            # 'gender',
         ]

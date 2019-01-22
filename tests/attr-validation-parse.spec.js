@@ -80,7 +80,7 @@ describe('AttrValidationParse', () => {
   describe('Test integer', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
-        type: 'number',
+        type: 'integer',
       });
     });
 
@@ -92,7 +92,7 @@ describe('AttrValidationParse', () => {
   describe('Test integer and required', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
-        type: 'number',
+        type: 'integer',
         required: true,
       });
     });
@@ -117,7 +117,7 @@ describe('AttrValidationParse', () => {
   describe('Test integer min validation', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
-        type: 'number',
+        type: 'integer',
         min: 10,
       });
     });

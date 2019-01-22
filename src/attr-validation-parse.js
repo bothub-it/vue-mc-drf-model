@@ -18,7 +18,7 @@ export default (description) => {
       validation = string;
       break;
 
-    case 'number':
+    case 'integer':
       validation = integer;
       break;
 

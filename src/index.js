@@ -1,10 +1,4 @@
-import AttrValidationParse from './attr-validation-parse';
-import AttrMutationParse from './attr-mutation-parse';
-import getModelDefinition from './get-model-definition';
-
-
-export default {
-  AttrValidationParse,
-  AttrMutationParse,
-  getModelDefinition,
-};
+export AttrValidationParse from './attr-validation-parse';
+export AttrMutationParse from './attr-mutation-parse';
+export getModelDefinition from './get-model-definition';
+export getModel from './get-model-definition';
