@@ -1,5 +1,6 @@
 export default ({ type }) => ({
   string: String,
-  number: Number,
+  integer: Number,
   boolean: Boolean,
+  email: String,
 })[type];

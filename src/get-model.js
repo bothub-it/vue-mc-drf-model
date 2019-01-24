@@ -1,10 +1,16 @@
 import { Model as VueMcModel } from 'vue-mc';
+import _ from 'lodash';
 import getModelDefinition from './get-model-definition';
 
 
 export default (attrsDescription, Model = VueMcModel) => {
   const modelDefinition = getModelDefinition(attrsDescription);
   class DRFModel extends Model {
+    // eslint-disable-next-line class-methods-use-this
+    defaults() {
+      return _.mapValues(modelDefinition.mutations, value => value());
+    }
+
     // eslint-disable-next-line class-methods-use-this
     validation() {
       return modelDefinition.validation;
@@ -15,7 +21,5 @@ export default (attrsDescription, Model = VueMcModel) => {
       return modelDefinition.mutations;
     }
   }
-  console.log('olé');
-  console.log(DRFModel);
   return DRFModel;
 };

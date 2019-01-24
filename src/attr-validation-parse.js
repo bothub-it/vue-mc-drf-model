@@ -4,7 +4,6 @@ import {
   integer,
   boolean,
   min,
-  max,
   length,
   email,
 } from 'vue-mc/validation';
@@ -47,7 +46,7 @@ export default (description) => {
   }
 
   if (description.max_length) {
-    validation = validation.and(max(description.max_length));
+    validation = validation.and(length(null, description.max_length));
   }
 
   return validation;
