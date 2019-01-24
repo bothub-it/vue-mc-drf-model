@@ -13,7 +13,24 @@
         type="text"
         v-model="people.email"
         placeholder="e-mail" />
-      {{ people.validate() }}
+      <input
+        type="checkbox"
+        v-model="people.activated" />
+      <select v-model="people.gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+        <option value="O">Other</option>
+        <option value="I">Invalid</option>
+      </select>
+      <select v-model="people.country">
+        <option value="BR">Brasil</option>
+        <option value="JP">Japão</option>
+        <option value="EU">EUA</option>
+        <option value="I">Invalid</option>
+      </select>
+      <input 
+        type="date"
+        v-model="people.birthday">
       <pre>{{ people.errors }}</pre>
       <button type="submit">Save</button>
     </form>
@@ -23,6 +40,8 @@
 <script>
 import { getModel } from 'vue-mc-drf-model';
 import { getPeopleOptions } from '../requests';
+import PeopleModelBase from '../models/people-base';
+import _ from 'lodash';
 
 
 export default {
@@ -35,7 +54,10 @@ export default {
   mounted() {
     getPeopleOptions()
       .then((response) => {
-        const PeopleModel = getModel(response.data.actions.POST);
+        const PeopleModel = getModel(
+          response.data.actions.POST,
+          PeopleModelBase,
+        );
         this.people = new PeopleModel(
           {},
           null,
@@ -47,8 +69,8 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.people.getSaveData());
-      console.log(this.people.save());
+      this.people.getSaveData()
+      this.people.save()
     }
   }
 };
