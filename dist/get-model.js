@@ -41,14 +41,26 @@ var _default = function _default(attrsDescription) {
     _inherits(DRFModel, _Model);
 
     function DRFModel() {
+      var _this;
+
       _classCallCheck(this, DRFModel);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(DRFModel).apply(this, arguments));
-    }
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(DRFModel).call(this));
+      _this.attrs_description = attrsDescription;
+      return _this;
+    } // eslint-disable-next-line class-methods-use-this
+
 
     _createClass(DRFModel, [{
+      key: "options",
+      value: function options() {
+        return {
+          validationErrorStatus: 400
+        };
+      } // eslint-disable-next-line class-methods-use-this
+
+    }, {
       key: "defaults",
-      // eslint-disable-next-line class-methods-use-this
       value: function defaults() {
         return _lodash.default.mapValues(modelDefinition.mutations, function (value) {
           return value();

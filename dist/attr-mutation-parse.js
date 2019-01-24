@@ -11,7 +11,9 @@ var _default = function _default(_ref) {
     string: String,
     integer: Number,
     boolean: Boolean,
-    email: String
+    email: String,
+    choice: String,
+    date: String
   }[type];
 };
 

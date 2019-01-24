@@ -23,6 +23,14 @@ var _default = function _default(description) {
       validation = _validation.boolean;
       break;
 
+    case 'choice':
+      validation = _validation.string;
+      break;
+
+    case 'date':
+      validation = _validation.date;
+      break;
+
     case 'email':
       validation = _validation.email;
       break;
