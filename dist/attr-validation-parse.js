@@ -44,7 +44,7 @@ var _default = function _default(description) {
   }
 
   if (description.max_length) {
-    validation = validation.and((0, _validation.max)(description.max_length));
+    validation = validation.and((0, _validation.length)(null, description.max_length));
   }
 
   return validation;

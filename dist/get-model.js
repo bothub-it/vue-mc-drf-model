@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _vueMc = require("vue-mc");
 
+var _lodash = _interopRequireDefault(require("lodash"));
+
 var _getModelDefinition = _interopRequireDefault(require("./get-model-definition"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -45,8 +47,16 @@ var _default = function _default(attrsDescription) {
     }
 
     _createClass(DRFModel, [{
-      key: "validation",
+      key: "defaults",
       // eslint-disable-next-line class-methods-use-this
+      value: function defaults() {
+        return _lodash.default.mapValues(modelDefinition.mutations, function (value) {
+          return value();
+        });
+      } // eslint-disable-next-line class-methods-use-this
+
+    }, {
+      key: "validation",
       value: function validation() {
         return modelDefinition.validation;
       } // eslint-disable-next-line class-methods-use-this
@@ -61,8 +71,6 @@ var _default = function _default(attrsDescription) {
     return DRFModel;
   }(Model);
 
-  console.log('olé');
-  console.log(DRFModel);
   return DRFModel;
 };
 

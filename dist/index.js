@@ -24,7 +24,7 @@ Object.defineProperty(exports, "getModelDefinition", {
 Object.defineProperty(exports, "getModel", {
   enumerable: true,
   get: function get() {
-    return _getModelDefinition2.default;
+    return _getModel2.default;
   }
 });
 
@@ -33,5 +33,7 @@ var _attrValidationParse = _interopRequireDefault(require("./attr-validation-par
 var _attrMutationParse = _interopRequireDefault(require("./attr-mutation-parse"));
 
 var _getModelDefinition2 = _interopRequireDefault(require("./get-model-definition"));
+
+var _getModel2 = _interopRequireDefault(require("./get-model"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

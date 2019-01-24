@@ -9,8 +9,9 @@ var _default = function _default(_ref) {
   var type = _ref.type;
   return {
     string: String,
-    number: Number,
-    boolean: Boolean
+    integer: Number,
+    boolean: Boolean,
+    email: String
   }[type];
 };
 
