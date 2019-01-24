@@ -13,4 +13,5 @@ class PeopleSerializer(serializers.ModelSerializer):
             # 'country',
             # 'birthday',
             # 'gender',
+            'activated',
         ]

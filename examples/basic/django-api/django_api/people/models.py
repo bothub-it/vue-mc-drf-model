@@ -25,3 +25,6 @@ class People(models.Model):
         choices=GENDER_CHOICES,
         blank=True,
     )
+    activated = models.BooleanField(
+        default=True,
+    )
