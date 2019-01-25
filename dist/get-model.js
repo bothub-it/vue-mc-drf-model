@@ -46,7 +46,7 @@ var _default = function _default(attrsDescription) {
       _classCallCheck(this, DRFModel);
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(DRFModel).call(this));
-      _this.attrs_description = attrsDescription;
+      _this.attrsDescription = attrsDescription;
       return _this;
     } // eslint-disable-next-line class-methods-use-this
 

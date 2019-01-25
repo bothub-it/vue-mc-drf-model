@@ -8,7 +8,7 @@ export default (attrsDescription, Model = VueMcModel) => {
   class DRFModel extends Model {
     constructor() {
       super();
-      this.attrs_description = attrsDescription;
+      this.attrsDescription = attrsDescription;
     }
 
     // eslint-disable-next-line class-methods-use-this
