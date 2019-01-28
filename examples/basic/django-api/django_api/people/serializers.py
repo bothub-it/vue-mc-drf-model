@@ -15,6 +15,7 @@ class PeopleSerializer(serializers.ModelSerializer):
             'birthday',
             'gender',
             'activated',
+            'about'
         ]
 
     email = serializers.EmailField(

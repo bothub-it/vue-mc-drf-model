@@ -3,6 +3,7 @@ from django_countries.fields import CountryField
 
 
 class People(models.Model):
+    DESCRIPTION_HELP_TEXT = ('Tell us about you!')
     GENDER_MALE = 'M'
     GENDER_FEMALE = 'F'
     GENDER_OTHER = 'O'
@@ -28,3 +29,7 @@ class People(models.Model):
     activated = models.BooleanField(
         default=True,
     )
+    about = models.TextField(
+        max_length=300,
+        blank=True,
+        help_text=DESCRIPTION_HELP_TEXT)
