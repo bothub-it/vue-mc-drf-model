@@ -30,6 +30,22 @@ export default (description) => {
       validation = string;
       break;
 
+    case 'text':
+      validation = string;
+      break;
+
+    case 'multiple choice':
+      validation = string;
+      break;
+
+    case 'field':
+      validation = string;
+      break;
+
+    case 'slug':
+      validation = string;
+      break;
+
     case 'date':
       validation = date;
       break;

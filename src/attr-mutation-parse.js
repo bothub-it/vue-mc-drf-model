@@ -5,4 +5,8 @@ export default ({ type }) => ({
   email: String,
   choice: String,
   date: String,
+  text: String,
+  field: String,
+  slug: String,
+  'multiple choice': String,
 })[type];
