@@ -13,7 +13,11 @@ var _default = function _default(_ref) {
     boolean: Boolean,
     email: String,
     choice: String,
-    date: String
+    date: String,
+    text: String,
+    field: String,
+    slug: String,
+    'multiple choice': String
   }[type];
 };
 

@@ -27,8 +27,24 @@ var _default = function _default(description) {
       validation = _validation.string;
       break;
 
+    case 'text':
+      validation = _validation.string;
+      break;
+
+    case 'multiple choice':
+      validation = _validation.string;
+      break;
+
+    case 'field':
+      validation = _validation.string;
+      break;
+
+    case 'slug':
+      validation = _validation.string;
+      break;
+
     case 'date':
-      validation = _validation.date;
+      validation = _validation.string;
       break;
 
     case 'email':
