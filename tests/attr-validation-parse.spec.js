@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import {
   string,
   integer,
-  date,
 } from 'vue-mc/validation';
 import AttrValidationParse from '../src/attr-validation-parse';
 
@@ -219,8 +218,6 @@ describe('AttrValidationParse', () => {
   });
 
   describe('Test Date', () => {
-    const today = new Date(2019, 1, 31);
-
     beforeEach(() => {
       validation = AttrValidationParse({
         type: 'date',
@@ -228,15 +225,15 @@ describe('AttrValidationParse', () => {
     });
 
     it('valid date format', () => {
-      expect(validation).to.be.equal(date);
+      expect(validation).to.be.equal(string);
     });
 
     it('valid date valid format', () => {
-      expect(validation(today)).to.be.true;
+      expect(validation('2015-02-22')).to.be.true;
     });
 
     it('valid date invalid format', () => {
-      expect(validation('hi there')).to.not.be.true;
+      expect(validation(2018)).to.not.be.true;
     });
   });
 

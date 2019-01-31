@@ -62,7 +62,7 @@ describe('AttrMutationParse', () => {
     });
 
     it('is a date mutation', () => {
-      expect(mutation).to.be.equal(Date);
+      expect(mutation).to.be.equal(String);
     });
   });
 
