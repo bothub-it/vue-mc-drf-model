@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint": "eslint **/*.js",
+    "lint": "eslint --ext .js src tests",
     "test": "nyc mocha --require @babel/register **/*.spec.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "babel src -d dist"
