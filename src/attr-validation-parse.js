@@ -6,7 +6,6 @@ import {
   min,
   length,
   email,
-  date,
 } from 'vue-mc/validation';
 
 
@@ -47,7 +46,7 @@ export default (description) => {
       break;
 
     case 'date':
-      validation = date;
+      validation = string;
       break;
 
     case 'email':
