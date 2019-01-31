@@ -4,7 +4,7 @@ export default ({ type }) => ({
   boolean: Boolean,
   email: String,
   choice: String,
-  date: String,
+  date: Date,
   text: String,
   field: String,
   slug: String,
