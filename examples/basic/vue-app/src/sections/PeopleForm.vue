@@ -50,7 +50,7 @@ export default {
   methods: {
     onSubmit() {
       const peopleAttrs = this.people.defaults()
-      Object.keys(peopleAttrs).forEach((attrsNames)=> {
+      Object.keys(peopleAttrs).forEach((attrName)=> {
         Object.keys(this.data).forEach((item)=> {
           if (attrName === item ) {
             this.people[attrName] = this.data[item]
