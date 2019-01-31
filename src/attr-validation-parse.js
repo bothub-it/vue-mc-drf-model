@@ -4,7 +4,6 @@ import {
   integer,
   boolean,
   min,
-  max,
   length,
   email,
 } from 'vue-mc/validation';
@@ -18,12 +17,36 @@ export default (description) => {
       validation = string;
       break;
 
-    case 'number':
+    case 'integer':
       validation = integer;
       break;
 
     case 'boolean':
       validation = boolean;
+      break;
+
+    case 'choice':
+      validation = string;
+      break;
+
+    case 'text':
+      validation = string;
+      break;
+
+    case 'multiple choice':
+      validation = string;
+      break;
+
+    case 'field':
+      validation = string;
+      break;
+
+    case 'slug':
+      validation = string;
+      break;
+
+    case 'date':
+      validation = string;
       break;
 
     case 'email':
@@ -47,7 +70,7 @@ export default (description) => {
   }
 
   if (description.max_length) {
-    validation = validation.and(max(description.max_length));
+    validation = validation.and(length(null, description.max_length));
   }
 
   return validation;

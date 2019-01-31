@@ -80,7 +80,7 @@ describe('AttrValidationParse', () => {
   describe('Test integer', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
-        type: 'number',
+        type: 'integer',
       });
     });
 
@@ -92,7 +92,7 @@ describe('AttrValidationParse', () => {
   describe('Test integer and required', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
-        type: 'number',
+        type: 'integer',
         required: true,
       });
     });
@@ -117,7 +117,7 @@ describe('AttrValidationParse', () => {
   describe('Test integer min validation', () => {
     beforeEach(() => {
       validation = AttrValidationParse({
-        type: 'number',
+        type: 'integer',
         min: 10,
       });
     });
@@ -175,5 +175,85 @@ describe('AttrValidationParse', () => {
     expect(() => {
       AttrValidationParse({ type: 'victor' });
     }).to.throw;
+  });
+
+  describe('Test field', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'field',
+      });
+    });
+
+    it('valid field format', () => {
+      expect(validation).to.be.equal(string);
+    });
+
+    it('valid field valid format', () => {
+      expect(validation('Hi, im test')).to.be.true;
+    });
+
+    it('valid field invalid format', () => {
+      expect(validation(3)).to.not.be.true;
+    });
+  });
+
+  describe('Test Slug', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'slug',
+      });
+    });
+
+    it('valid slug format', () => {
+      expect(validation).to.be.equal(string);
+    });
+
+    it('valid slug valid format', () => {
+      expect(validation('Hi, im test slug')).to.be.true;
+    });
+
+    it('valid slug invalid format', () => {
+      expect(validation(3)).to.not.be.true;
+    });
+  });
+
+  describe('Test Date', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'date',
+      });
+    });
+
+    it('valid date format', () => {
+      expect(validation).to.be.equal(string);
+    });
+
+    it('valid date valid format', () => {
+      expect(validation('2015-02-22')).to.be.true;
+    });
+
+    it('valid date invalid format', () => {
+      expect(validation(2018)).to.not.be.true;
+    });
+  });
+
+  describe('Test multiple choice', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'multiple choice',
+      });
+    });
+
+    it('valid slug format', () => {
+      expect(validation).to.be.equal(string);
+    });
+
+    it('valid slug valid format', () => {
+      expect(validation('Hi, im test multiple choice')).to.be.true;
+    });
+
+    it('valid multiple choice invalid format', () => {
+      expect(validation(3)).to.not.be.true;
+    });
   });
 });

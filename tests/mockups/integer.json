@@ -1,0 +1,25 @@
+{
+  "name": "Integer Test",
+  "description": "This is a simple OPTIONS mockup with intenger attr.",
+  "renders": [
+    "application/json",
+    "text/html"
+  ],
+  "parses": [
+    "application/json",
+    "application/x-www-form-urlencoded",
+    "multipart/form-data"
+  ],
+  "actions": {
+    "POST": {
+      "name": {
+        "type": "intenger",
+        "required": true,
+        "read_only": false,
+        "label": "age",
+        "help_text": "Repository display age",
+        "style": {}
+      }
+    }
+  }
+}

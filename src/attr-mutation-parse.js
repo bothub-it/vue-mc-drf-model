@@ -1,5 +1,12 @@
 export default ({ type }) => ({
   string: String,
-  number: Number,
+  integer: Number,
   boolean: Boolean,
+  email: String,
+  choice: String,
+  date: String,
+  text: String,
+  field: String,
+  slug: String,
+  'multiple choice': String,
 })[type];
