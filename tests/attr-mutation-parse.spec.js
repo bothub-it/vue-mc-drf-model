@@ -75,4 +75,14 @@ describe('AttrMutationParse', () => {
       expect(mutation).to.be.equal(String);
     });
   });
+
+  describe('Type password', () => {
+    beforeEach(() => {
+      mutation = AttrMutationParse({ type: 'password' });
+    });
+
+    it('is a password mutation', () => {
+      expect(mutation).to.be.equal(String);
+    });
+  });
 });

@@ -8,5 +8,6 @@ export default ({ type }) => ({
   text: String,
   field: String,
   slug: String,
+  password: String,
   'multiple choice': String,
 })[type];

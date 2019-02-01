@@ -21,6 +21,10 @@ export default (description) => {
       validation = integer;
       break;
 
+    case 'password':
+      validation = string;
+      break;
+
     case 'boolean':
       validation = boolean;
       break;

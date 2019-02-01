@@ -256,4 +256,16 @@ describe('AttrValidationParse', () => {
       expect(validation(3)).to.not.be.true;
     });
   });
+
+  describe('Test password', () => {
+    beforeEach(() => {
+      validation = AttrValidationParse({
+        type: 'password',
+      });
+    });
+
+    it('valid password format', () => {
+      expect(validation).to.be.equal(string);
+    });
+  });
 });
