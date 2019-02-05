@@ -17,6 +17,7 @@ var _default = function _default(_ref) {
     text: String,
     field: String,
     slug: String,
+    password: String,
     'multiple choice': String
   }[type];
 };

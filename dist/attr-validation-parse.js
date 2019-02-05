@@ -19,6 +19,10 @@ var _default = function _default(description) {
       validation = _validation.integer;
       break;
 
+    case 'password':
+      validation = _validation.string;
+      break;
+
     case 'boolean':
       validation = _validation.boolean;
       break;
