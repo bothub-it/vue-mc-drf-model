@@ -6,6 +6,7 @@ import {
   min,
   length,
   email,
+  array,
 } from 'vue-mc/validation';
 
 
@@ -38,7 +39,7 @@ export default (description) => {
       break;
 
     case 'multiple choice':
-      validation = string;
+      validation = array;
       break;
 
     case 'field':
