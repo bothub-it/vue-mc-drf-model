@@ -244,12 +244,8 @@ describe('AttrValidationParse', () => {
       });
     });
 
-    it('valid slug format', () => {
-      expect(validation).to.be.equal(string);
-    });
-
-    it('valid slug valid format', () => {
-      expect(validation('Hi, im test multiple choice')).to.be.true;
+    it('valid array format', () => {
+      expect(validation([1, 2, 3])).to.be.true;
     });
 
     it('valid multiple choice invalid format', () => {
