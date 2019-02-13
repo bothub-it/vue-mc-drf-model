@@ -9,5 +9,5 @@ export default ({ type }) => ({
   field: String,
   slug: String,
   password: String,
-  'multiple choice': String,
+  'multiple choice': Array,
 })[type];
