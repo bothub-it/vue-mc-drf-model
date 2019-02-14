@@ -36,7 +36,7 @@ var _default = function _default(description) {
       break;
 
     case 'multiple choice':
-      validation = _validation.string;
+      validation = _validation.array;
       break;
 
     case 'field':
